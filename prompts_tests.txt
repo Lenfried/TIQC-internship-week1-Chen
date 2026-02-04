@@ -1,0 +1,67 @@
+Initial Prompt:
+build a CLI tool to parse a .csv of: 
+column 1: student names
+column 2: GPA
+and calculates the average GPA of all students and outputs it, rounded to 2 decimal places.
+also output the number of rows processed
+
+ask the user to put the .csv in the same directory as the program and enter the file name of the .csv
+skip the first row if the first value is "Student Name"
+ignore any rows if the GPA value is not a number, or if any values in the row are blank
+
+Post-prompt:
+Added "Name" as an additional string to ignore if it's in the first row.
+Added an if statement to skip the line if the GPA value is over 4.0 or is negative.
+
+Test 1:
+
+Student Name,GPA
+Arthur Curry,3.20
+Victor Stone,3.50
+Hal Jordan,2.20
+Barry Allen,4.00
+
+Output 1:
+
+GPA Average Calculator
+----------------------
+Put your CSV file in the same directory as this program.
+Enter the CSV file name (e.g. gpa.csv): debug.csv
+Rows processed (valid students): 4
+Average GPA: 3.23
+
+Test 2:
+
+Student Name,GPA
+Arthur Curry,3.20
+Victor Stone,3.50
+Hal Jordan,2.20
+Barry Allen,-4.00
+Sebastian Fors, 4.20
+
+Output 2:
+
+GPA Average Calculator
+----------------------
+Put your CSV file in the same directory as this program.
+Enter the CSV file name (e.g. gpa.csv): debug.csv
+Rows processed (valid students): 3
+Average GPA: 2.97
+
+Test 3:
+
+Student Name,GPA
+Arthur Curry,3.20
+Victor Stone,3.50
+Hal Jordan,"2.20"
+Barry Allen,
+Sebastian Fors, N/A
+
+Output 3:
+
+GPA Average Calculator
+----------------------
+Put your CSV file in the same directory as this program.
+Enter the CSV file name (e.g. gpa.csv): debug.csv
+Rows processed (valid students): 3
+Average GPA: 2.97
