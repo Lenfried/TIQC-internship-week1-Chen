@@ -50,6 +50,10 @@ def main() -> None:
             except ValueError:
                 continue
 
+            # Ignore negative GPA values and GPA values over 4.0
+            if gpa < 0 or gpa > 4.0:
+                continue
+
             total_gpa += gpa
             valid_row_count += 1
 
