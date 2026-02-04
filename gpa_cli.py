@@ -37,7 +37,7 @@ def main() -> None:
             gpa_str = row[1].strip()
 
             # Skip header row if first cell is "Student Name"
-            if index == 0 and name == "Student Name":
+            if index == 0 and name == "Student Name" or name == "Name":
                 continue
 
             # Ignore rows with blank values
